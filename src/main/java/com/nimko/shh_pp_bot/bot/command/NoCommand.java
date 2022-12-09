@@ -16,7 +16,11 @@ public class NoCommand implements Command {
     @Override
     public void execute(Message message) {
         CommandBox commandBox = new CommandBox(sendMessService);
-        switch (message.getText()) {            
+        switch (message.getText()) {
+            case "Music": {
+                commandBox.useCommand("/audio").execute(message);
+                break;
+            }
             case "Hello": {
                 commandBox = new CommandBox(new SendMessInline(sendMessService.getBot()));
                 commandBox.useCommand("/inline").execute(message);

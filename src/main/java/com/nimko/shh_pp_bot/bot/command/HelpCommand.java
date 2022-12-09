@@ -16,7 +16,7 @@ public class HelpCommand implements Command {
 
     @Override
     public void execute(Message message) {
-        String mess="Есть команды: \n" +
+        String mess="Команди бота: \n" +
                 Arrays.stream(CommandName.values())
                         .filter(c -> !(c.equals(CommandName.BUTTON)
                                 || c.equals(CommandName.STOP)

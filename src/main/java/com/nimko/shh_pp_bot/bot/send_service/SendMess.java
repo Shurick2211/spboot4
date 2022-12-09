@@ -20,7 +20,6 @@ public class SendMess implements SendMessService{
         sendMessage.setChatId(chatId);
         sendMessage.enableHtml(true);
         sendMessage.setText(mess);
-
         try {
            bot.execute(sendMessage);
         } catch (TelegramApiException e) {

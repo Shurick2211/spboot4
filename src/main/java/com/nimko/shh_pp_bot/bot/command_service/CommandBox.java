@@ -20,6 +20,7 @@ public class CommandBox {
                 .put(CommandName.NO.getComName(), new NoCommand(sendMessService))
                 .put(CommandName.BUTTON.getComName(), new Button(sendMessService))
                 .put(CommandName.INLINE.getComName(), new Inline(sendMessService))
+                .put(CommandName.AUDIO.getComName(), new AudioCommand(sendMessService))
                 .put(CommandName.STOP.getComName(), new StopCommand(sendMessService))
                 .build();
         unknowCommand = new UnknowCommand(sendMessService);
