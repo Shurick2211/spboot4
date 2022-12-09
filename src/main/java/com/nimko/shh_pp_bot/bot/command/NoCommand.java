@@ -23,7 +23,7 @@ public class NoCommand implements Command {
                 break;
             }           
             case "STOP": {
-                commandBox.useCommand("/stop").execute(message);
+                commandBox.useCommand("/stopbot").execute(message);
                 break;
             }
             default:
