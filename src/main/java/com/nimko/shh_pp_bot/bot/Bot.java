@@ -28,7 +28,8 @@ public class Bot extends TelegramLongPollingBot {
         CommandBox commandBox = new CommandBox(new SendMess(this));
         if(update.hasMessage()) {
             String message = update.getMessage().getText().trim();
-            log.info("{} : {}",update.getMessage().getFrom().getFirstName(),message);
+            log.info("{} {} : {}",update.getMessage().getFrom().getFirstName(),
+                    update.getMessage().getFrom().getUserName(),message);
             if (message.startsWith("/")) {
                 String identification = message.split(" ")[0].toLowerCase();
                 commandBox.useCommand(identification).execute(update.getMessage());

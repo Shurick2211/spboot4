@@ -31,7 +31,7 @@ public class NoCommand implements Command {
                 break;
             }
             default:
-                String mess = "Ипользуй помощь /help";
+                String mess = "Дивись тут -> /help";
                 sendMessService.send(message.getChatId().toString(), mess);
         }
     }

@@ -13,7 +13,7 @@ public class UnknowCommand implements Command {
 
     @Override
     public void execute(Message message) {
-        String mess = "О чем ты! \n Помощь: /help";
+        String mess = "Моя-твоя don`t understand! \n Допомога: /help";
         sendMessService.send(message.getChatId().toString(), mess);
     }
 }
