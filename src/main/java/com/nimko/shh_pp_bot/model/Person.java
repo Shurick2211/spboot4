@@ -1,14 +1,13 @@
 package com.nimko.shh_pp_bot.model;
 
 import lombok.*;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Entity
+@Document
 public class Person {
     @Id
     private long id;

@@ -9,6 +9,7 @@ import com.nimko.shh_pp_bot.repo.DataBase;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -46,7 +47,8 @@ public class Bot extends TelegramLongPollingBot {
                     ));
             String mess = db.findAll().stream()
                     .map(Person::toString)
-                    .reduce((x,y) -> x + "\n" + y)
+                    .reduce((x,y) -> x.replace("null","")
+                            + "\n" + y.replace("null",""))
                     .orElse("");
             new SendMess(this).send(String.valueOf(chatId),mess);
         }
