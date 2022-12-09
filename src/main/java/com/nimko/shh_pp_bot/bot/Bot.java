@@ -36,6 +36,7 @@ public class Bot extends TelegramLongPollingBot {
                 commandBox.useCommand(CommandName.NO.name()).execute(update.getMessage());
             }
         } else
+
         if(update.hasCallbackQuery() && update.getCallbackQuery().getData().equals("list")){
             long chatId = update.getCallbackQuery().getFrom().getId();
             db.save(new Person(chatId,
