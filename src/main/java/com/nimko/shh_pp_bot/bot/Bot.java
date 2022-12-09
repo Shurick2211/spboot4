@@ -51,7 +51,6 @@ public class Bot extends TelegramLongPollingBot {
                     .orElse("");
             new SendMess(this).send(String.valueOf(chatId),mess);
         }
-
     }
 
     @Override
