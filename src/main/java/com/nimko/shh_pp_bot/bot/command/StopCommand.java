@@ -17,6 +17,6 @@ public class StopCommand implements Command {
         String mess = "Зупинка Бота!";
         sendMessService.send(message.getChatId().toString(), mess);
         log.warn("Bot was stopped!");
-        System.exit(1);
+        System.exit(0);
     }
 }
